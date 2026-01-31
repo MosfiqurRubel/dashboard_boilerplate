@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+/* Light Theme (default) */
+:root {
+  --color-background: oklch(1 0 0);
+  --color-foreground: oklch(0.1822 0 0);
+  --color-card: oklch(0.9702 0 0);
+  --color-border: oklch(0.9233 0.0067 286.27);
+}
+
+/*
+|---------------------------------------------------------------
+|  Dark Theme Overrides
+|---------------------------------------------------------------
+|  Override the default palette by adjusting the Lightness (L)
+|  and potentially Chroma (C) values inside the `.dark` class.
+*/
+.dark {
+  /* Core Colors */
+  --color-background: oklch(0.1822 0 0);
+  --color-foreground: oklch(1 0 0);
+  --color-card: oklch(0.235 0 0);
+  --color-border: oklch(0.3414 0.0034 286.22);
+}
+
+/*
+|---------------------------------------------------------------
+|  Tailwind CSS v4.1 - `@theme` Directive
+|---------------------------------------------------------------
+|  This maps the CSS variables to Tailwind's utility classes.
+*/
+
+@theme {
+  --font-roboto: "Roboto", sans-serif;
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-card: var(--color-card);
+  --color-border: var(--color-border);
+}
+
+html {
+  @apply scroll-smooth font-roboto h-full;
+}
+
+body {
+  @apply h-full bg-background text-foreground font-roboto transition-colors duration-300;
+}
+
+@layer utilities {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    @apply appearance-none m-0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@utility flex-center {
+  @apply flex justify-center items-center;
+}
+
+@utility form-label {
+  @apply block text-sm font-medium text-foreground;
+}
+
+@utility form-input {
+  @apply w-full border border-border rounded-md text-sm px-3 py-2.5 text-foreground outline-none transition-all duration-300 placeholder:text-gray-400 disabled:opacity-60 disabled:cursor-not-allowed focus:outline-hidden focus:ring-1 focus:ring-blue-500 focus:border-blue-500;
+}
+
+#root {
+  @apply h-full max-w-full my-0 mx-auto;
+}
+
+@utility root-layout {
+  @apply flex flex-col min-h-screen;
+}
+
+@utility layout-container {
+  @apply flex flex-1;
+}
+
+@utility main-content {
+  @apply flex-1 overflow-auto p-6;
+}
+
+@utility sidebar {
+  @apply border-r border-border border-b-0 overflow-y-auto transition-all duration-300 ease-in-out bg-gray-800;
+}
