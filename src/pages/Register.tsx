@@ -29,11 +29,9 @@ const Register: React.FC = () => {
   };
 
   useEffect(() => {
-    console.log(data);
-    console.log(responseError);
-    // if (responseError?.data) {
-    //   setError(responseError?.data);
-    // }
+    if (responseError?.data) {
+      setError(responseError.data);
+    }
 
     if (data?.accessToken && data?.user) {
       navigate("/dashboard");

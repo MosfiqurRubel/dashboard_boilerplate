@@ -18,22 +18,6 @@
       "name": "Airin",
       "confirmPassword": "123456",
       "id": 3
-    },
-    {
-      "email": "test1@gmail.com",
-      "password": "$2a$10$zWz/uNnnZZR/EoSq/o7i0uYr917QGVrbTnTMoCJstFrj195tuaRWm",
-      "name": "Test User1",
-      "confirmPassword": "1234",
-      "agreed": true,
-      "id": 4
-    },
-    {
-      "email": "test2@gmail.com",
-      "password": "$2a$10$efmGFmIPB4ebhl0RS3daru4e0rhTErk1dW7ZJ4MTmC5oTTpAjNHu6",
-      "name": "Test User2",
-      "confirmPassword": "123456",
-      "agreed": true,
-      "id": 5
     }
   ],
   "videos": [
