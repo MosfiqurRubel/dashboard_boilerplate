@@ -3,6 +3,7 @@ import { useAuthCheck } from "@/hooks/useAuthCheck";
 import Register from "@/pages/Register";
 import Login from "@/pages/Login";
 import Dashboard from "@/pages/Dashboard";
+import PublicRoute from "@/components/PublicRoute";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import NotFound from "@/components/NotFound";
 import RootLayout from "@/RootLayout";
@@ -17,8 +18,10 @@ function App() {
   ) : (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route element={<PublicRoute />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Route>
 
         {/* Protected Routes */}
         <Route element={<ProtectedRoute />}>

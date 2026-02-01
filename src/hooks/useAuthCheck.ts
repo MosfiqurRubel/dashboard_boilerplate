@@ -25,7 +25,7 @@ export const useAuthCheck = () => {
     // setTimeout(() => {
     //   setAuthChecked(true);
     // }, 2000);
-  }, [dispatch]);
+  }, [dispatch, setAuthChecked]);
 
   return authChecked;
 };

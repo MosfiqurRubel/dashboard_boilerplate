@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import type { FC } from "react";
+import Button from "@/components/ui/Button";
 
 const NotFound: FC = () => {
   const navigate = useNavigate();
@@ -16,13 +17,9 @@ const NotFound: FC = () => {
           </span>
         </div>
 
-        <button
-          type="button"
-          onClick={() => navigate("/")}
-          className="bg-sky-500 text-white text-base py-2 px-5 cursor-pointer rounded-4xl"
-        >
+        <Button rounded="full" onClick={() => navigate("/login")}>
           Go Back Home
-        </button>
+        </Button>
       </div>
     </section>
   );

@@ -5,6 +5,7 @@ import { useRegisterMutation } from "@/features/auth/authApi";
 import type { RegisterRequest } from "@/types";
 import { useNavigate } from "react-router-dom";
 import Heading from "@/components/ui/Heading";
+import Button from "@/components/ui/Button";
 
 const Register: React.FC = () => {
   const { isDarkMode, toggleTheme } = useTheme();
@@ -47,7 +48,6 @@ const Register: React.FC = () => {
       setError("Passwords do not match");
     } else {
       await register(formData).unwrap();
-      //   navigate("/dashboard");
     }
   };
   return (
@@ -58,6 +58,7 @@ const Register: React.FC = () => {
       >
         {isDarkMode ? <Sun /> : <Moon />}
       </button>
+
       <div
         className={`p-6 rounded shadow-md w-full max-w-md ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-black"}`}
       >
@@ -126,13 +127,14 @@ const Register: React.FC = () => {
             </label>
           </div>
 
-          <button
+          <Button
             type="submit"
             disabled={isLoading}
-            className={`w-full text-white py-2 rounded transition ${isLoading ? "bg-gray-500 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600 cursor-pointer"}`}
+            loading={isLoading}
+            className="w-full cursor-pointer"
           >
             {isLoading ? "Signing in..." : "Sign up"}
-          </button>
+          </Button>
 
           {error !== "" && (
             <p className="mt-5 h-10 max-w-7xl mx-auto p-2 text-red-700 bg-red-100 rounded-md">

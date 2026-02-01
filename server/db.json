@@ -1,23 +1,17 @@
 {
   "users": [
     {
-      "id": 1,
-      "email": "test@gmail.com",
-      "password": "123456",
-      "name": "Test User"
-    },
-    {
       "email": "mosfiqur@gmail.com",
       "password": "$2a$10$tgd.sIjSNhSpHqq5hy/52.sbwuxKzgrYo5PTqVagMi5356aTT6tVG",
       "name": "Mosfiq",
-      "id": 2
+      "id": 1
     },
     {
       "email": "airin@gmail.com",
       "password": "$2a$10$L6Zl2Df4y20WVvAC7eOkkO5T6VzniGNd5rtiIiTzOglk9c0v.tTou",
       "name": "Airin",
       "confirmPassword": "123456",
-      "id": 3
+      "id": 2
     }
   ],
   "videos": [

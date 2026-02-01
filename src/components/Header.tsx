@@ -6,6 +6,7 @@ import { Menu, LogOut, Sun, Moon } from "lucide-react";
 import useTheme from "@/hooks/useTheme";
 import { userLoggedOut } from "@/features/auth/authSlice";
 import type { RootState } from "@/app/store";
+import Button from "@/components/ui/Button";
 
 const Header: React.FC = () => {
   const { isShrinkSidebar, toggleShrinkSidebar } = useShrink();
@@ -22,7 +23,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`h-14 flex items-center justify-between px-4 border-b border-border ${isDarkMode ? "bg-white text-black" : "bg-gray-800 text-gray-300"}`}
+      className={`h-14 flex items-center justify-between px-4 border-b border-border ${isDarkMode ? "bg-gray-800 text-gray-300" : "bg-white text-black"}`}
     >
       <div className="flex items-center">
         <button
@@ -50,14 +51,18 @@ const Header: React.FC = () => {
         >
           {isDarkMode ? <Sun /> : <Moon />}
         </button>
-        <button
-          onClick={handleLogout}
-          className="flex items-center gap-2 px-3 py-1 rounded bg-red-500 text-white hover:bg-red-600 transition"
+
+        <Button
           title="Logout"
+          variant="danger"
+          size="sm"
+          rounded="sm"
+          className="py-1"
+          onClick={handleLogout}
         >
           <LogOut size={18} />
           {!isShrinkSidebar && <span>Logout</span>}
-        </button>
+        </Button>
       </div>
     </header>
   );

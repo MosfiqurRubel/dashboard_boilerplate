@@ -4,6 +4,8 @@ import { Moon, Sun } from "lucide-react";
 import { useLoginMutation } from "@/features/auth/authApi";
 import type { LoginRequest } from "@/types";
 import { Link, useNavigate } from "react-router-dom";
+import Button from "@/components/ui/Button";
+import Heading from "@/components/ui/Heading";
 
 const Login: React.FC = () => {
   const { isDarkMode, toggleTheme } = useTheme();
@@ -43,7 +45,13 @@ const Login: React.FC = () => {
       <div
         className={`p-6 rounded shadow-md w-full max-w-md ${isDarkMode ? "bg-gray-800 text-white" : "bg-white text-black"}`}
       >
-        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
+        <Heading
+          level={3}
+          align="center"
+          fontWeight="bold"
+          className="mb-6"
+          text="Login"
+        />
 
         <form onSubmit={handleLogin} className="space-y-5">
           <input
@@ -72,13 +80,16 @@ const Login: React.FC = () => {
               Forgot password?
             </Link>
           </div>
-          <button
+
+          <Button
             type="submit"
             disabled={isLoading}
-            className={`w-full text-white py-2 rounded transition ${isLoading ? "bg-gray-500 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600 cursor-pointer"}`}
+            loading={isLoading}
+            className="w-full cursor-pointer"
           >
             {isLoading ? "Logging in..." : "Login"}
-          </button>
+          </Button>
+
           <div className="flex-center text-sm">
             Don't have an Account?
             <Link
